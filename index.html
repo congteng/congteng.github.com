@@ -23,7 +23,7 @@
 			var home = {
 
 				has_files: ["blog", "github", "email", "about.me"],
-				has_dirs: ["social"],
+				has_dirs: ["social", "skills", "friendslinks"],
 
 				getInfo: function(name){
 					switch (name){
@@ -41,7 +41,7 @@
 				social: {
 					belongs_to: "home",
 					has_files: ["twitter", "google_plus"],
-
+					has_dirs: ["testv", "b"],
 					getInfo: function(name){
 						switch (name){
 							case "twitter":
@@ -49,33 +49,29 @@
 							case "google_plus":
 								return "congteng45@gmail.com";
 						}
-					},
+					}
+					
+				},
 
-
-					has_dirs: ["testv", "b"],
-					testv: {
-						belongs_to: "social",
-						// has_files:["test1", "test2"]
-					},
-					b: {
-						belongs_to: "social",
-						// has_files:["b1"],
-						has_dirs: ["ttt"],
-
-						ttt: {
-							// has_files: ["test_logic"],
-							belongs_to: "b",
-							has_dirs: ["ccc", "eee", "fff"],
-
-							ccc: {
-								belongs_to: "ttt"
-							},
-							fff:{
-								belongs_to: "ttt"
-							},
-							eee:{
-								belongs_to: "ttt"
-							}
+				skills: {
+					has_files: ["java", "rails"],
+					belongs_to: "home",
+					getInfo: function(name){
+						switch (name){
+							case "java":
+								return "congteng.iteye.com";
+							case "rails":
+								return "congteng.github.com";
+						}
+					}
+				},
+				friendslinks: {
+					belongs_to: "home",
+					has_files: ["kevin"],
+					getInfo: function(name){
+						switch (name){
+							case "kevin":
+								return "imkevin.me";
 						}
 					}
 				}
