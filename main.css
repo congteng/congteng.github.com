@@ -90,7 +90,7 @@ span input{
 
 	position: absolute;
 	/*margin: 180px 100px 40px 830px;*/
-	margin: 230px 300px 1000px 100px;
+	margin: 260px 300px 1000px 100px;
 	padding: 20px;
 
 	color: #5F5F5F;
@@ -104,8 +104,8 @@ span input{
 }
 
 .aboutme table{
-	color: #6B6767;
-	font-size: 25px;
+	color: #7E7979;
+	font-size: 23px;
 }
 
 
@@ -135,4 +135,7 @@ span input{
 	/*background-color: yellow;*/
 	width: 100px;
 }
-
+.ps{
+	font-size: 20px;
+	color: #5F5F5F;
+}
