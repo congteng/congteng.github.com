@@ -1,0 +1,23 @@
+structure
+
+	home
+		blog
+		social
+			google+
+			twitter
+		github
+
+
+commands
+
+help
+	-> 
+
+ls 	
+	->  
+
+cd
+	->
+
+visit
+	->

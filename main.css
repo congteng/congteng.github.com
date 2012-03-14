@@ -1,0 +1,138 @@
+@font-face {
+ font-family: myfont;
+ src:url('MONACO.TTF');
+}
+body{
+	background-color: white;
+}
+
+.main{
+
+	width: 690px;
+	height: 100px;
+	background-color: black;
+
+	margin: 50px 100px 10px 50px;
+
+	border-radius: 5px;
+    box-shadow: 10px 10px 10px #888888;	
+
+    padding: 30px;
+
+    position: absolute;
+
+    overflow: auto;
+}
+
+
+#line{
+ 	position:absolute;
+	bottom:0px;
+	left:-300px;
+
+	/*top: 1700px;*/
+}
+
+.prompt{
+	width: 500px;
+	/*height: 50px;*/
+/*	width: 200px;
+	height: 100px;
+	margin: 200px 100px 100px 100px;
+	position: absolute;
+;*/	
+	color: white;
+
+}
+
+span{
+	font-family: myfont;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.flag{
+	color: #E1181D;
+}
+.position{
+	color: #1F5391;
+}
+.rvm{
+	color: #4D39D6;
+}
+
+.file{
+	color: #2EBB01;
+}
+
+.version{
+	color: #568722;
+}
+
+span input{
+	color: white;
+	height: 40px;
+	width: 550px;
+	font-family: myfont;
+	font-weight: bold;
+	font-size: 20px;
+	background-color: transparent;
+	border-width: 0;
+}
+
+.sidebar{
+	/*width: 520px;*/
+
+	width: 950px;
+	background-color: lightgrey;
+	border-radius: 5px;
+    /*box-shadow: 10px 10px 10px #888888;	*/
+
+	position: absolute;
+	/*margin: 180px 100px 40px 830px;*/
+	margin: 230px 300px 1000px 100px;
+	padding: 20px;
+
+	color: #5F5F5F;
+	font-size: 30px;
+	font-family: myfont;
+}
+
+.description{
+	font-size: 20px;
+	color: #7E7979;
+}
+
+.aboutme table{
+	color: #6B6767;
+	font-size: 25px;
+}
+
+
+.result{
+	color: white;
+	font-family: myfont;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 3px;
+	margin-left: -10px;	
+	
+	/*background-color: yellow;*/
+}
+
+
+.result table{
+	margin-left: -3px;
+	/*padding: 5px;*/
+	width: 500px;
+	color: white;
+	font-family: myfont;
+	font-weight: bold;
+	font-size: 15px;	
+}
+
+.help{
+	/*background-color: yellow;*/
+	width: 100px;
+}
+
