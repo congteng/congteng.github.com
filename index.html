@@ -223,7 +223,7 @@
 			function help(){
 				var description = "the commnands just like the unix commands, such as these commands: <br>";
 
-				description += "<table ><tr><td class='help'>ls</td><td>list links and division directory, links are colored green and directory are blue</td></tr><tr><td>clear</td><td>remove the history of the commands you type in</td></tr><tr><td>cd</td><td>just like the 'cd' you knew, change directory</td></tr><tr><td>visit</td><td>you can use 'visit github' to fork me</td></tr></table>"
+				description += "<table ><tr><td class='help'>ls</td><td>list links and division directory, links are colored green and directory are blue</td></tr><tr><td>clear</td><td>remove the history of the commands you type in</td></tr><tr><td>cd</td><td>just like the 'cd' you knew, change directory</td></tr><tr><td>visit</td><td>you can use as 'visit something' to open some website</td></tr></table>"
 				return [description];
 			}
 
@@ -251,7 +251,7 @@
 				}else if(cmd.indexOf("visit") == 0){
 					var name = cmd.substring(6);
 					if(findUrlAndOpen(name)){
-						$cursor.before(joinStr("if not, visit " + findSelfObj("home", home).getInfo(name) + ", thx for visiting my " + name + " :)", position));
+						$cursor.before(joinStr("thx for visiting [" + name + "]: " + findSelfObj("home", home).getInfo(name) + " :D", position));
 					}else{
 						$cursor.before(joinStr("there is no '" + name + "'", position));
 					}
@@ -259,7 +259,6 @@
 				}else if(cmd == ""){
 					$cursor.before(joinStr(handleResult(resultArr), position));
 				}else if(cmd == "help" || cmd == "?"){
-					// resultArr = ["the commands provided now are: ls | cd | visit | help/help | clear "]
 
 					$cursor.before(joinStr(handleResult(help()), position));
 				}else if(cmd.indexOf("cd ") == 0){
