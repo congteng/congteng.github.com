@@ -140,7 +140,7 @@ span input{
 	color: #5F5F5F;
 }
 
-.disqus_thread{
+#disqus_thread{
 
 	width: 488px;
 	border-radius: 5px;
