@@ -142,11 +142,11 @@ span input{
 
 #disqus_thread{
 
-	width: 488px;
-	border-radius: 5px;
+	/*width: 488px;*/
+	/*border-radius: 5px;*/
 
-	position: absolute;
+	/*position: absolute;*/
 	/*margin: 180px 100px 40px 830px;*/
-	margin: 500px 300px 1000px 100px;
-
+	/*margin: 500px 300px 1000px 100px;*/
+	
 }
