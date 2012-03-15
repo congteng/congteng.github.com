@@ -297,11 +297,13 @@
 					// animate effect 
 					// sidebar
 					if(flag){
+						$(".description").remove();
+						$("#disqus_thread").fadeIn(2000);
 						$sidebar.animate({
 							opacity: 0.6,
 							width: '450px',
 							left: "730px",
-							top: "-130px",
+							top: "-200px",
 							fontSize: "25px",
 						}, 2000);
 						// terminal
@@ -383,7 +385,6 @@
 			PS. IE sucks, try Chrome Firefox Safari ...
 		</div>		
 
-		<div id="disqus_thread"></div>
 	</div>
 
 	<b:if cond='data:blog.pageType == &quot;item&quot;'>
@@ -398,6 +399,7 @@
 
 
 
+	<div id="disqus_thread"></div>
 	
 	<script type="text/javascript">
 	    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
