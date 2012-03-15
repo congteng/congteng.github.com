@@ -144,11 +144,12 @@ span input{
 
 	width: 500px;
 	height: 300px;
-	/*background-color: yellow;*/
+	background-color: #E4E4E4;
 	position: absolute;
 	margin: 260px 10px 40px 823px;
 	display: none;
 	font-family: myfont;
-	/*margin: 500px 300px 1000px 100px;
-	font-family: myfont;
+
+    overflow: auto;
+
 }
