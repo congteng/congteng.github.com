@@ -1,0 +1,433 @@
+<html>
+<head>
+	<title>Marshall's Page</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="js.js"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+
+			var $sidebar = $(".sidebar")
+			var $line = $("#line");
+
+			// var $img = $(".main img");
+			var $cursor = $("#cursor");
+
+			var $prompt = $(".prompt");
+			var $terminal = $(".main");
+
+			var flag = true;
+			var position = "home";
+
+			// as this convention, the teminal can form the tree
+			var home = {
+
+				has_files: ["blog", "github", "email", "about.me"],
+				has_dirs: ["social", "skills", "friendslinks"],
+
+				getInfo: function(name){
+					switch (name){
+						case "blog":
+							return "congteng.iteye.com";
+						case "github":
+							return "congteng.github.com";
+						case "email":
+							return "congteng45@gmail.com";
+						case "about.me":
+							return "about.me/congteng";
+					}
+				},
+
+				social: {
+					belongs_to: "home",
+					has_files: ["twitter", "google_plus"],
+					has_dirs: ["testv", "b"],
+					getInfo: function(name){
+						switch (name){
+							case "twitter":
+								return "congteng.twitter.com";
+							case "google_plus":
+								return "congteng45@gmail.com";
+						}
+					}
+					
+				},
+
+				skills: {
+					has_files: ["java", "rails"],
+					belongs_to: "home",
+					getInfo: function(name){
+						switch (name){
+							case "java":
+								return "congteng.iteye.com";
+							case "rails":
+								return "congteng.github.com";
+						}
+					}
+				},
+				friendslinks: {
+					belongs_to: "home",
+					has_files: ["kevin"],
+					getInfo: function(name){
+						switch (name){
+							case "kevin":
+								return "imkevin.me";
+						}
+					}
+				}
+			};
+			
+
+			function goToEnd(){
+				var dom = $terminal[0];
+				// $terminal[0].scrollTop = $terminal[0].scrollHeight;
+				var height = dom.scrollHeight;
+				dom.scrollTop = height;
+
+				// change the line's position
+				$line.css("top", height - 50);
+				// for chrome's 
+				$line.css("height", 25);
+			}
+
+			function joinStr(result, position){
+				return "<div class='result'>" + result + "</div><span class='pre'><span class='flag'>-></span><span class='position'> " + position + " </span><span class='rvm'> rvm:(</span><span class='version'>ruby-1.9.3</span><span class='rvm'>) </span></span><span class='prompt'></span>"
+			}
+
+			function handleResult(resultArr){
+
+				var result = "<table>";
+
+				// handle rows
+				var length = resultArr.length;
+				if(length % 4 != 0){
+					var row = Math.ceil(length/4);
+				}else{
+					var row = length / 4;
+				}
+
+				for(var i = 0; i < row; i++){
+					result += "<tr>";
+					for(var j = 0; j < 4; j++){
+						var val = resultArr[4*i + j];
+						if(val != null){
+							result += "<td>" + val + "</td>";
+						}
+					}
+					result += "</tr>";
+				}
+
+				result += "</table>";
+				return result;
+			}
+
+			function contains(arr, element){
+				var flag = false;
+				if(arr){
+					arr.forEach(function(e){
+					if(e == element){
+						flag = true;
+						}
+					})
+				}
+				return flag;
+			}
+
+			function renderDirAndFile(obj){
+
+				arr = [];
+				if(obj.has_dirs){
+					for(var i = 0; i < obj.has_dirs.length; i++){
+						arr.push("<span class='rvm'>" + obj.has_dirs[i] + "</span>");
+					}
+				}
+				if(obj.has_files){
+					for(var i = 0; i < obj.has_files.length; i++){	
+						arr.push("<span class='file'>" + obj.has_files[i] + "</span>");
+					}
+				}
+				return arr;
+			}
+
+			// method to find current dir, a engine to this terminal
+			function findSelfObj(father, fatherObj){
+				var objStr = father;
+				
+				if(contains(fatherObj.has_dirs, position)){
+					objStr += "." + position;
+
+					// alert("yyy");
+					// alert(objStr);
+					var retObj = eval(objStr);
+					// alert(retObj.has_files);
+					// alert(retObj.has_files)
+					return retObj;
+				}else if(position == "home"){
+					// alert(1);
+					return home;
+				}else if(fatherObj.has_dirs == null){
+					// alert("x")
+					return null;
+				}else{
+					var retObj;
+					
+					for(var i = 0; i < fatherObj.has_dirs.length; i++){
+						var testStr = objStr + "." + fatherObj.has_dirs[i];
+						// var objStr += "." + fatherObj.has_dirs[i];
+
+						// alert(objStr);
+						// alert(3)
+						var obj = eval(testStr);
+						// alert(testStr);
+						if(obj){
+
+							retObj = findSelfObj(testStr, obj);
+						}
+						
+					}
+
+					// alert(retObj.has_dirs);
+
+					// alert(retObj.belongs_to);
+					return retObj;
+				}	
+			}
+
+			// for command ls
+			function list(){
+				var obj = findSelfObj("home", home);
+				return renderDirAndFile(obj);
+			}
+
+			// for command cd
+			function changeDirectory(dir){
+
+				// alert(dir);
+				var obj = findSelfObj("home", home);
+				
+				if(obj.has_dirs && contains(obj.has_dirs, dir)){
+					position = dir;
+					return true;
+				}else{
+					if(dir == ".."){
+						position = obj.belongs_to;
+						return true;
+					}else if(dir == "."){
+						return true;
+					}else{
+						return false;	
+					}
+				}
+			}
+
+			function help(){
+				var description = "the commnands just like the unix commands, such as these commands: <br>";
+
+				description += "<table ><tr><td class='help'>ls</td><td>list links and division directory, links are colored green and directory are blue</td></tr><tr><td>clear</td><td>remove the history of the commands you type in</td></tr><tr><td>cd</td><td>just like the 'cd' you knew, change directory</td></tr><tr><td>visit</td><td>you can use as 'visit something' to open some website</td></tr></table>"
+				return [description];
+			}
+
+			function findUrlAndOpen(name){
+				var obj = findSelfObj("home", home);
+				if(contains(obj.has_files, name)){
+					// open a new site
+					window.open("http://" + obj.getInfo(name),"my " + name); 
+
+					return true;
+				}else{
+					return false;	
+				}
+			}
+
+			// processor
+			function handleCommand(cmd){
+
+				var resultArr = "";
+				if(cmd == "ls"){
+				
+					resultArr = list();
+
+					$cursor.before(joinStr(handleResult(resultArr), position));
+				}else if(cmd.indexOf("visit") == 0){
+					var name = cmd.substring(6);
+					if(findUrlAndOpen(name)){
+						$cursor.before(joinStr("thx for visiting [" + name + "]: " + findSelfObj("home", home).getInfo(name) + " :D", position));
+					}else{
+						$cursor.before(joinStr("there is no '" + name + "'", position));
+					}
+
+				}else if(cmd == ""){
+					$cursor.before(joinStr(handleResult(resultArr), position));
+				}else if(cmd == "help" || cmd == "?"){
+
+					$cursor.before(joinStr(handleResult(help()), position));
+				}else if(cmd.indexOf("cd ") == 0){
+					var dir = cmd.substring(3);
+
+					if(changeDirectory(dir)){
+						$cursor.before(joinStr(handleResult(""), position));
+					}else{
+						$cursor.before(joinStr(dir + " does not exist", position));
+					}
+				}else if(cmd == "clear"){
+					// delete pre & prompt & result
+					$(".pre").remove();
+					$(".prompt").remove();
+					$(".result").remove();
+
+					$cursor.before(joinStr("", position));
+				}
+				else{
+					resultArr = ["command not found: " + cmd]
+					$cursor.before(joinStr(handleResult(resultArr), position));
+				}
+			}
+
+
+			$line.focus();
+
+			$line.keyup(function(event){
+				if ( event.which == 13 ) {
+					var cmd = $line.val();
+					$line.val("");
+
+					// handle cmd
+					handleCommand(cmd);
+					
+					// animate effect 
+					// sidebar
+					if(flag){
+						$(".description").remove();
+						$(".ps").css("font-size", "10px");
+						$("#disqus_thread").fadeIn(2000);
+						$sidebar.animate({
+							opacity: 0.6,
+							width: '450px',
+							left: "730px",
+							top: "-200px",
+							fontSize: "25px",
+						}, 2000);
+						// terminal
+						$terminal.animate({
+							height: '488px'
+						}, 2000);
+						flag = false;
+					}
+
+					// go to end of the terminal
+					goToEnd();
+
+   				}else{
+   					// change the element every time
+   					$prompt = $cursor.prev();
+					$prompt.text($line.val());
+   				}
+
+			});
+
+
+			$terminal.focusout(function(){
+				$cursor.hide();
+			});
+
+			$terminal.click(function(){
+				$cursor.show();
+				$line.focus();
+				goToEnd();
+			});
+
+		});
+
+	</script>
+
+	<!-- google analytics -->
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-30003279-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+</head>
+<body>
+
+	<div class="main">
+		<!-- these always change -->
+		<span class="pre">
+			<span class="flag">-></span><span class="position"> home </span><span class="rvm">
+			rvm:(</span><span class="version">ruby-1.9.3</span><span class="rvm">)</span>
+		</span>
+		<span class="prompt"></span>
+		<!-- these will stay origin -->
+		<img id='cursor' src="cursor.gif" height="10" width="10">
+		<input id="line">
+	</div>
+
+	<div class="sidebar">
+		Welcome to my site
+		<div class="description">
+			this is a simple unix terminal with poor functionalitie simulated by js, type "help" or "?" to start
+			, <iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=congteng&repo=congteng.github.com&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe> me on github to see the source code :)
+		</div>
+		<div class="aboutme">
+			<TABLE>
+				<tr>
+					<td>Author:</td>
+					<td>Marshall G</td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td>congteng45@gmail.com</td>
+				</tr>
+				<tr>
+					<td>twitter:</td>
+					<td><a href="https://twitter.com/congteng" class="twitter-follow-button" data-show-count="false">Follow @congteng</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></td>
+				</tr>
+			</TABLE>
+			<div class="description">
+				find more with this terminal
+			</div>
+		</div>
+		<div class="ps">
+			PS. IE sucks, try Chrome Firefox Safari ...
+		</div>		
+
+	</div>
+
+	<b:if cond='data:blog.pageType == &quot;item&quot;'>
+	<div style="float:right;padding:4px;">
+	<a href='http://twitter.com/share' rel='nofollow' class='twitter-share-button' expr:data-url='data:post.canonicalUrl' expr:data-text='data:post.title' data-related='congteng:' data-count='none' data-via='congteng'  data-lang='en'></a>
+	<b:if cond='data:post.isFirstPost'>
+	<script type="text/javascript" src="http://platform.twitter.com/widgets.js">
+	</script>
+	</b:if>
+	</div>
+	</b:if>
+
+
+
+	<div id="disqus_thread"></div>
+	
+	<script type="text/javascript">
+	    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	    var disqus_shortname = 'congteng'; // required: replace example with your forum shortname
+
+	    /* * * DON'T EDIT BELOW THIS LINE * * */
+	    (function() {
+	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</body>
+</html>
