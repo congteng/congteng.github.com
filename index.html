@@ -9,13 +9,71 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/MetroJs.css">
+    <link type="text/css" rel="Stylesheet" href='css/jquery.metro.css' />
+
+
+    <script src="js/js.js"></script>
+	<script type="text/javascript" src="js/MetroJs.js"></script>
+	<script type="text/javascript" src='js/jquery.metro.js'></script>
+	<script type="text/javascript">
+
+		$(function(){
+			    $(".live-tile, .flip-list").not(".exclude").liveTile({
+			    	frontIsRandom: false,
+			    	delay: 2000
+			    });
+
+			    $("div.metro-pivot").metroPivot();
+		});
+
+		function pivot_previous() { $("div.metro-pivot").data("controller").goToPrevious(); }
+        function pivot_next() { $("div.metro-pivot").data("controller").goToNext(); }
+	</script>
+
     <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
+
+		footer{
+			position: fixed;			
+
+			padding-top:5px;
+			position:fixed; 
+			bottom:20px; 
+			left: 180px;
+			width:100%; 
+			width: 1000px;
+		}
+
+
+		body { font-family: Segoe UI; font-size: 12pt; background: #000; color: White; margin:0; overflow-y:scroll;}
+		div.page {max-width:1000px; margin:auto; overflow:hidden; margin-bottom:100px;}
+
+		h1 {font-size:40pt; font-weight:normal; margin:0; margin-bottom:-30px;}
+		h2 {font-size:30pt; font-weight:normal; margin:0;}
+		h3 {font-size:25pt; font-weight:normal; margin:0;}
+		h4 {font-size:20pt; font-weight:normal; margin:0;}
+
+
+		.greeting{
+			margin-left: 220px;
+			
+		}
+
+		.self{
+			margin-left: 220px;
+			
+		}
+		.info{
+			margin-left: 220px;
+			
+		}
+
+		.pivot-item{
+			margin-top: 20px;
+		}
+
     </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -24,49 +82,123 @@
 
   </head>
 
-  <body>
+  <body  accent='orange' theme='dark'>
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">简历</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">主页</a></li>
-              <li><a href="#contact">联系方式</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+	
 
-    <div class="container">
 
-      <h1>丛腾的简历</h1>
+  	<div class='page'>
+		<div class='metro-pivot'>
+		    <div class='pivot-item'>
+		        <h3>个人简介</h3> 
 
-    </div> <!-- /container -->
+		        <div id="tiles" class="blue">
+			        <!-- Mango Flip List that triggers every 3 seconds -->
+				    <div class="mango list-tile">
+				        <span class="tile-title">照片</span>
+				        <ul class="flip-list fourTiles" data-mode="flip-list" data-delay="500">
+				            <li>
+				                <div><img src="img/11.jpg"  alt="1" /></div>
+				                <div><img src="img/55.jpg" alt="1" /></div>
+				            </li>
+				            <li data-direction="horizontal">
+				                <div><img src="img/22.jpg" alt="2" /></div>
+				                <div><img src="img/66.jpg" alt="2" /></div>
+				            </li>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap-transition.js"></script>
-    <script src="js/bootstrap-alert.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-scrollspy.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-    <script src="js/bootstrap-tooltip.js"></script>
-    <script src="js/bootstrap-popover.js"></script>
-    <script src="js/bootstrap-button.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-carousel.js"></script>
-    <script src="js/bootstrap-typeahead.js"></script>
+				            <li>
+				                <div><img src="img/33.jpg"  alt="3" /></div>
+				                <div><img src="img/77.jpg" alt="3" /></div>
+				            </li>
+				            <li>
+				                <div><img src="img/44.jpg"  alt="4" /></div>
+				                <div><img src="img/88.jpg" alt="4" /></div>
+				            </li>
+				        </ul>
+				    </div>
+				</div>
+
+				<div class='greeting'>
+					<h4 class='accent-color'>亲爱的HR您好，欢迎来到我的个人简历网站</h4>
+				</div>
+
+				<div class='self'>
+					<ul>
+						<li>我来自山东威海，是一名即将升入大四的学生，希望8月开始工作</li>
+						<li>从大一开始自学java,并多次带队做过几个作品，参加过几届比赛</li>
+						<li>一度对web开发原理痴迷，研究过java经典框架spring,struts2源代码，理解web开发原理</li>
+						<li>经朋友介绍,大三接触并喜欢上ruby语言，特别是强大的元编程</li>
+						<li>使用过sinatra, 熟悉rails开发，满足一般ruby/rails开发工程师招聘要求</li>
+						<li>有自己的github(地址github.com/congteng), bitbucket开发账号</li>
+						<li>相对熟悉前端html5, css(比较薄弱), js(语言方面比较通晓)</li>
+						<li>喜欢前沿技术，尝试过nodejs(入门)</li>
+						<li>热爱开源，能够熟练使用ubuntu linux/Mac OS X</li>
+						<li>喜欢apple，最近在研究IOS</li>
+						<li>喜欢英语，喜欢美剧，喜欢R&B(Brian Mcknight,Babyface,Jay Sean ...)</li>
+						<li>活跃在ruby-china(帐号congteng)</li>
+					</ul>
+				</div>
+		    </div>
+
+
+	        <div class='pivot-item'>
+		        <h3>自我评价</h3>
+
+		        <div class="live-tile" data-stops="100%" data-speed="750" data-delay="3000">
+		        	<span class="tile-title">咪咪</span>
+		        	<div style='background-color: skyblue'></div>
+		        	<div style='background-color: pink'></div>
+		    	</div>
+				<div class='info'>
+					
+					优点:
+					<ul>
+						<li>有爱心,喜欢小动物，养了一只叫<font color='pink'><a href='http://v.youku.com/v_show/id_XNDEwOTc4OTg4.html'>咪咪</a></font>的小猫</li>
+					</ul>
+					缺点:
+					<ul>
+						<li>bbb</li>
+					</ul>
+
+				</div>
+		    </div>
+
+	        <div class='pivot-item'>
+		        <h3>项目经验</h3> 
+		    </div>
+
+	        <div class='pivot-item'>
+		        <h3>技术技能</h3> 
+		        <ul>
+
+		        </ul>
+		    </div>
+
+	        <div class='pivot-item'>
+		        <h3>语言能力</h3> 
+		    </div>
+
+	        <div class='pivot-item'>
+		        <h3>其他特长</h3> 
+		    </div>
+
+			<div class='pivot-item'>
+		        <h3>项目1</h3> 
+		    </div>
+			
+			<div class='pivot-item'>
+		        <h3>项目2</h3> 
+		    </div>
+
+		</div>
+
+	</div>
+	<footer>
+		<span style='font-size:30pt;'>
+	       <a href='javascript:pivot_previous();' class='left-pivot'>&lsaquo;&lsaquo;</a>
+	       <a href='javascript:pivot_next();' class='right-pivot'>&rsaquo;&rsaquo;</a>
+	   	</span>
+   	</footer>
 
   </body>
 </html>
