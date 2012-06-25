@@ -52,17 +52,21 @@
 		h1 {font-size:40pt; font-weight:normal; margin:0; margin-bottom:-30px;}
 		h2 {font-size:30pt; font-weight:normal; margin:0;}
 		h3 {font-size:25pt; font-weight:normal; margin:0;}
-		h4 {font-size:20pt; font-weight:normal; margin:0;}
+		h4 {font-size:20pt; font-weight:normal; margin:0;color: orange;}
 
 
 		.greeting{
-			margin-left: 220px;
-			
+			margin-left: 220px;	
 		}
 
 		.self{
+
 			margin-left: 220px;
-			
+			padding: 5px;
+		}
+		.english-self{
+			margin-left: 15px;
+
 		}
 		.info{
 			margin-left: 220px;
@@ -71,6 +75,13 @@
 
 		.pivot-item{
 			margin-top: 20px;
+		}
+		.contact{
+			margin-top: 150px;
+		}
+
+		.self-main{
+			margin-top: 100px;
 		}
 
     </style>
@@ -84,14 +95,12 @@
 
   <body  accent='orange' theme='dark'>
 
-	
-
-
   	<div class='page'>
 		<div class='metro-pivot'>
 		    <div class='pivot-item'>
+		    	
 		        <h3>个人简介</h3> 
-
+				<div class='self-main'>
 		        <div id="tiles" class="blue">
 			        <!-- Mango Flip List that triggers every 3 seconds -->
 				    <div class="mango list-tile">
@@ -118,19 +127,17 @@
 				    </div>
 				</div>
 
-				<div class='greeting'>
-					<h4 class='accent-color'>亲爱的HR您好，欢迎来到我的个人简历网站</h4>
-				</div>
+
 
 				<div class='self'>
 					<ul>
-						<li>我来自山东威海，是一名即将升入大四的学生，希望8月开始工作</li>
-						<li>从大一开始自学java,并多次带队做过几个作品，参加过几届比赛</li>
+						<li>我叫<font style='color: orange; font-size: 20px'>丛腾</font>，是22岁即将升入大四的学生，家乡是山东威海市，希望8月开始工作</li>
+						<li>从大一开始自学java, 并多次带队做过几个作品，参加过几届比赛</li>
 						<li>一度对web开发原理痴迷，研究过java经典框架spring,struts2源代码，理解web开发原理</li>
 						<li>经朋友介绍,大三接触并喜欢上ruby语言，特别是强大的元编程</li>
 						<li>使用过sinatra, 熟悉rails开发，满足一般ruby/rails开发工程师招聘要求</li>
-						<li>有自己的github(地址github.com/congteng), bitbucket开发账号</li>
-						<li>相对熟悉前端html5, css(比较薄弱), js(语言方面比较通晓)</li>
+						<li>有自己的github(github.com/congteng), bitbucket开发账号</li>
+						<li>相对熟悉前端html5, css(比较薄弱), js(熟练掌握)</li>
 						<li>喜欢前沿技术，尝试过nodejs(入门)</li>
 						<li>热爱开源，能够熟练使用ubuntu linux/Mac OS X</li>
 						<li>喜欢apple，最近在研究IOS</li>
@@ -138,57 +145,120 @@
 						<li>活跃在ruby-china(帐号congteng)</li>
 					</ul>
 				</div>
+			</div>
+			
 		    </div>
 
+	        <div class='pivot-item'>
+		        <h3>大学生活</h3> 
+		        <ul>
+					<h4>学习方面</h4>
+					<li>我从大一开始自学java，上学期主要学习java平台的基础api, 培养代码写作风格等等
+						大一下学期开始web方向的学习，从数据库oracle/mysql到jsp
+						大一暑假主要学习了javaweb方向的框架(s2sh)等
+					</li>	
+					<br>        	
+					<li>大二上学期重点放在编程基础，学习了算法数据结构，23种设计模式等
+						下学期组建并带领团队做过几个项目，成型的有在线对接聊天，电影推荐的网站等</li>
+						<br>
+					<li>大三接触ruby,以及热门的框架Rails,Sinatra之类，很喜欢她们的开发方式的，所以还研究过元编程，对ruby的对象模型设计特别佩服
+						下学期主要在用rails做学校的项目，自己的创新项目等,也尝试做做IOS之类</li>
+						<br>
+					<h4 >课余生活</h4>
+					<li>另外我比较\注重健身与健康，每周有5天的傍晚时间我会去健身房进行肌肉训练，这对我很重要，能够让我有更多的精力学习更多东西，也为将来的工作打下身体的基础</li>
+					<br>
+					<li>另外我养了一只叫咪咪的小猫</li>
+					<br>
+					<h4>娱乐</h4>
+					<li>我的爱好比较广泛，其中最爱听音乐，看电影。小时候参加过音乐方面的学习，能弹钢琴,吉他等乐器,也很喜欢唱歌，也参加了一些比赛和晚会等</li>
+					
+		        </ul>
+		    </div>	     
 
 	        <div class='pivot-item'>
-		        <h3>自我评价</h3>
+		        <h3>技术技能</h3>		    
 
-		        <div class="live-tile" data-stops="100%" data-speed="750" data-delay="3000">
-		        	<span class="tile-title">咪咪</span>
-		        	<div style='background-color: skyblue'></div>
-		        	<div style='background-color: pink'></div>
-		    	</div>
-				<div class='info'>
-					
-					优点:
-					<ul>
-						<li>有爱心,喜欢小动物，养了一只叫<font color='pink'><a href='http://v.youku.com/v_show/id_XNDEwOTc4OTg4.html'>咪咪</a></font>的小猫</li>
-					</ul>
-					缺点:
-					<ul>
-						<li>bbb</li>
-					</ul>
+		        <div>
+		        <font style='color: orange'>语言</font>
+		        <ul>
+		        	<li>C : 了解，自学过课本，没有实习经验</li>
+					<li>Java : 熟练，使用过2年多，有比较好的代码书写习惯</li>		    	
+					<li>Ruby : 比较熟练，很喜欢这种书写优雅的语言，缺点是大部分时间用Ruby写Rails的项目，对语言本身提供的api熟练度不够，但是对元编程有过研究</li>
+					<li>Objective-c : 入门，可以做基本的app</li>
+					<li>Javascript : 熟练, 是用的不多但是最久的语言，学习过语言本身的特性，面向对象开发方式，熟练使用各种流行的js框架，了解过NodeJS</li>
+					<li>HTML : 比较熟练，因为是做网站的基础</li>
+					<li>CSS : 比较欠缺，对前台的技术掌握一般</li>
+		        </ul>
+		        </div>
+		        <div>
+		        <font style='color: orange'>方向</font>
+		        <ul>
+		        	<li>mobile : 因为自己的项目需要IPhone客户端，最近在尝试 IOS 方向的学习，基本可以开发App</li>
+		        	<li>web : 有多于两年半的开发经验，比较熟悉web app的结构，对传输协议稍有了解，了解前后台数据传输原理，理解AJAX等，对现有流行的开发框架都比较熟悉(struts2 springMVC RoR ...)
+		        		对web的很多领域都有了解，做过在线聊天系统，SNS社区，BBS论坛等；学习过应用层的搜索引擎技术(Lucence), 数据处理(推荐引擎)等web智能算法等
+		        	</li>
+		        </ul>
+		        </div>
+		        <div>
+		        <font style='color: orange'>数据库</font>
+		        	<ul>
+		        	关系型：
+		        		<li>oracle : 最早接触的数据库，从此开始学习sql语言，了解简单的数据库管理</li>
+		        		<li>mysql : 在有了Sql基础之上后比较容易学习的数据库，在此学习了数据库事务管理</li>
+		        	</ul>
+		        	<ul>
+		        	NOSQL：
+		        		<li>MongoDB : 自己的项目里选用的数据库，比较喜欢这种开发方式，比较快捷，但是对性能优化的问题还不太了解</li>
+		        		<li>Redis : 简单的使用过，是用来做类似 Google Suggest 的功能的，简单了解</li>
+		        	</ul>
+		        </div>
+		        <div>
+		        <font style='color: orange'>其他</font>
+		        <ul>
+		        	<li>数据结构与算法 : 了解，在学习Java时简单了解过，阅读过Java的Collection包中比较常用的数据结构的源代码(ArrayList, LinkedList ...)受益匪浅，对代码细节上的设计有一些理解</li>
+		        	<li>设计模式 : 比较熟悉23种设计模式，阅读过砖头书《java设计模式》，有重构代码的习惯</li>
+		        </ul>
+		        </div>
+		    </div>
 
+	
+			<div class='pivot-item'>
+		        <h3>代码</h3> 
+
+
+
+		        	<div class='english-self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
 				</div>
 		    </div>
 
-	        <div class='pivot-item'>
-		        <h3>项目经验</h3> 
-		    </div>
-
-	        <div class='pivot-item'>
-		        <h3>技术技能</h3> 
+		    <div class='pivot-item'>
+	        	 <h3>联系方式</h3> 
+	        	<div class='contact'>
+		       
 		        <ul>
-
+		        	<li><font style='color: orange'>手机</font> : 15244099487  |  15698232386</li>
+		        	<li><font style='color: orange'>Gmail</font> : congteng45@gmail.com</li>
+		        	<li><font style='color: orange'>Twitter</font> : congteng</li>
+		        	<li><font style='color: orange'>QQ</font> : 148095943</li>
+		        	<li><font style='color: orange'>Github</font> : congteng</li>
 		        </ul>
-		    </div>
-
-	        <div class='pivot-item'>
-		        <h3>语言能力</h3> 
-		    </div>
-
-	        <div class='pivot-item'>
-		        <h3>其他特长</h3> 
-		    </div>
-
-			<div class='pivot-item'>
-		        <h3>项目1</h3> 
+		        </div>
 		    </div>
 			
-			<div class='pivot-item'>
-		        <h3>项目2</h3> 
-		    </div>
 
 		</div>
 
