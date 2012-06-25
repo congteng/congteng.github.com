@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>简历</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+
+    <link rel="stylesheet" type="text/css" href="css/MetroJs.css">
+    <link type="text/css" rel="Stylesheet" href='css/jquery.metro.css' />
+
+
+    <script src="js/js.js"></script>
+	<script type="text/javascript" src="js/MetroJs.js"></script>
+	<script type="text/javascript" src='js/jquery.metro.js'></script>
+	<script type="text/javascript">
+
+		$(function(){
+			    $(".live-tile, .flip-list").not(".exclude").liveTile({
+			    	frontIsRandom: false,
+			    	delay: 2000
+			    });
+
+			    $("div.metro-pivot").metroPivot();
+
+
+			    $("#detail").toggle(function(){
+			    	$("#cursor").attr("src", "img/parent.png");
+			    	$("footer").animate({
+        				height: "190"
+        			});
+			    }, function(){
+			    	$("#cursor").attr("src", "img/overflowdots.png");
+			    	$("footer").animate({
+        				height: "50"
+        			});
+			    });
+
+			   $(".page").click(function(){
+			   		$("#cursor").attr("src", "img/overflowdots.png");
+			    	$("footer").animate({
+        				height: "50"
+        			});
+			   });
+		});
+
+		function pivot_previous() { $("div.metro-pivot").data("controller").goToPrevious(); }
+        function pivot_next() { $("div.metro-pivot").data("controller").goToNext(); }
+
+	</script>
+
+    <style>
+
+		footer{
+			position: fixed;			
+			height: 50px;
+			padding-top:5px;
+			position:fixed; 
+			bottom:0px; 
+		
+			width:100%; 
+			background-color: grey;
+			text-align: center;
+		}
+
+	
+
+		body { font-family: Segoe UI; font-size: 12pt; background: #000; color: White; margin:0; overflow-y:scroll;}
+		div.page {max-width:1000px; margin:auto; overflow:hidden; margin-bottom:100px;}
+
+		h1 {font-size:40pt; font-weight:normal; margin:0; margin-bottom:-30px;}
+		h2 {font-size:30pt; font-weight:normal; margin:0;}
+		h3 {font-size:25pt; font-weight:normal; margin:0;}
+		h4 {font-size:20pt; font-weight:normal; margin:0;color: orange;}
+
+
+		.greeting{
+			margin-left: 220px;	
+		}
+
+		.self{
+			margin-left: 220px;
+			padding: 5px;
+		}
+		.english-self{
+			margin-left: 15px;
+
+		}
+		.info{
+			margin-left: 220px;
+		}
+
+		.pivot-item{
+			margin-top: 20px;
+		}
+		.contact{
+			margin-top: 150px;
+			margin-left: 280px;
+		}
+
+		.self-main{
+			margin-top: 100px;
+		}
+
+		.more{
+			margin-left: 500px;
+			position: fixed;
+		}
+
+		.instruction{
+			color: black;
+			font-size: 10px;
+		}
+
+		.language{
+			color: black;
+			font-size: 20px;
+			margin-left:30px;
+			text-align:left;
+			padding: 5px;
+		}
+
+
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body  accent='orange' theme='dark'>
+
+  	<div class='page'>
+		<div class='metro-pivot'>
+		    <div class='pivot-item'>
+		    	
+		        <h3>Self Instruction</h3> 
+				<div class='self-main'>
+		        <div id="tiles" class="blue">
+			        <!-- Mango Flip List that triggers every 3 seconds -->
+				    <div class="mango list-tile">
+				        <span class="tile-title">照片</span>
+				        <ul class="flip-list fourTiles" data-mode="flip-list" data-delay="500">
+				            <li>
+				                <div><img src="img/11.jpg"  alt="1" /></div>
+				                <div><img src="img/55.jpg" alt="1" /></div>
+				            </li>
+				            <li data-direction="horizontal">
+				                <div><img src="img/22.jpg" alt="2" /></div>
+				                <div><img src="img/66.jpg" alt="2" /></div>
+				            </li>
+
+				            <li>
+				                <div><img src="img/33.jpg"  alt="3" /></div>
+				                <div><img src="img/77.jpg" alt="3" /></div>
+				            </li>
+				            <li>
+				                <div><img src="img/44.jpg"  alt="4" /></div>
+				                <div><img src="img/88.jpg" alt="4" /></div>
+				            </li>
+				        </ul>
+				    </div>
+				</div>
+
+
+
+				<div class='self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
+				</div>
+			</div>
+			
+		    </div>
+
+	        <div class='pivot-item'>
+		        <h3>College Life</h3> 
+		        <ul>
+					<h4>About Study</h4>
+					<li>
+						I learned Java by myself when I went to College, my attention was on the basic things like APIs in my first semester, I also kept a good code style
+						In my second semester, I started to learn the Web technology, from oracle/mysql database to JSP
+						In the summer vacation, the main thing is about some powerful and classical frameworks such as Spring Struts Hibernate ...
+					</li>	
+					<br>        	
+					<li>
+						In my Sophomore semester, I paid more attention on the basic stuff like data structure, 23 design patterns and so on.
+						The next semester, I leaded a team and worked on some projects, such as chatting online system, recommender of movies ...
+					</li>
+						<br>
+					<li>
+						I got to know about Ruby last semeter, I tried Rails, Sinatra ... Thanks to the metaprogramming, which made their code style so elegant.
+						Recently I've been working on the project of my school, and my own creative project too, I also try to write client on IOS
+					</li>
+						<br>
+					<h4 >Free Time</h4>
+					<li>I go to gym 5 days in a week, to train my muscle, this is not only good for my health, but also make me more energetic, it's also a base for me to
+						work better in the future
+					</li>
+					<br>
+					<li>In addition, I keep a lovely cat "Mimi" with me</li>
+					<br>
+					<h4>Entertainment</h4>
+					<li>
+						I have a lot of hobbies, especially listening to music, watching movies. I also can play the piano, the guitar and some other instruments.I like singing, and in my school time I took part in lots of competitions and parties
+					</li>
+					
+		        </ul>
+		    </div>	     
+
+	        <div class='pivot-item'>
+		        <h3>Skills & Experience</h3>		    
+
+		        <div>
+		        <font style='color: orange'>Computer Languages</font>
+		        <ul>
+		        	<li>C : seldom use, I just read books</li>
+					<li>Java : skilled, I have use Java for more than 2 years(from JavaSE to JaveEE)</li>		    	
+					<li>Ruby : skilled, Ruby is so elegant, I use a lot of time to learn the metaprogramming, but I'm not so familiar with the API as Java</li>
+					<li>Objective-c : familiar, I can use it to make basic Apps</li>
+					<li>Javascript : skilled, I use it for a long time, I also learned its features, all kinds of famous framework like jquery, NodeJS ...</li>
+					<li>HTML : skilled, because it's the skeleton of a webpage</li>
+					<li>CSS : not so good</li>
+		        </ul>
+		        </div>
+		        <div>
+		        <font style='color: orange'>Field</font>
+		        <ul>
+		        	<li>mobile app : Recently I've been studied IPhone client development for a couple of days, for the requirement of my new project</li>
+		        	<li>web : I have more than 2 years experience of web development有多于两年半的开发经验，比较熟悉web app的结构，对传输协议稍有了解，了解前后台数据传输原理，理解AJAX等，对现有流行的开发框架都比较熟悉(struts2 springMVC RoR ...)
+		        		对web的很多领域都有了解，做过在线聊天系统，SNS社区，BBS论坛等；学习过应用层的搜索引擎技术(Lucence), 数据处理(推荐引擎)等web智能算法等
+		        	</li>
+		        </ul>
+		        </div>
+		        <div>
+		        <font style='color: orange'>数据库</font>
+		        	<ul>
+		        	关系型：
+		        		<li>oracle : 最早接触的数据库，从此开始学习sql语言，了解简单的数据库管理</li>
+		        		<li>mysql : 在有了Sql基础之上后比较容易学习的数据库，在此学习了数据库事务管理</li>
+		        	</ul>
+		        	<ul>
+		        	NOSQL：
+		        		<li>MongoDB : 自己的项目里选用的数据库，比较喜欢这种开发方式，比较快捷，但是对性能优化的问题还不太了解</li>
+		        		<li>Redis : 简单的使用过，是用来做类似 Google Suggest 的功能的，简单了解</li>
+		        	</ul>
+		        </div>
+		        <div>
+		        <font style='color: orange'>其他</font>
+		        <ul>
+		        	<li>数据结构与算法 : 了解，在学习Java时简单了解过，阅读过Java的Collection包中比较常用的数据结构的源代码(ArrayList, LinkedList ...)受益匪浅，对代码细节上的设计有一些理解</li>
+		        	<li>设计模式 : 比较熟悉23种设计模式，阅读过砖头书《java设计模式》，有重构代码的习惯</li>
+		        </ul>
+		        </div>
+		    </div>
+
+	
+			<div class='pivot-item'>
+		        <h3>Favourate Code</h3> 
+
+
+
+		        	<div class='english-self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
+					</div><div class='english-self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
+					</div><div class='english-self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
+					</div><div class='english-self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
+					</div><div class='english-self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
+					</div><div class='english-self'>
+					
+					</div>
+		    </div>
+
+
+		    <div class='pivot-item'>
+	        	 <h3>Project Experience</h3> 
+		        ...
+
+		    </div>
+
+		    <div class='pivot-item'>
+	        	 <h3>Contact</h3> 
+	        	<div class='contact'>
+		       
+		        <ul>
+		        	<li><font style='color: orange'>mobile</font> : 15244099487  |  15698232386</li>
+		        	<li><font style='color: orange'>Gmail</font> : congteng45@gmail.com</li>
+		        	<li><font style='color: orange'>Twitter</font> : congteng</li>
+		        	<li><font style='color: orange'>QQ</font> : 148095943</li>
+		        	<li><font style='color: orange'>Github</font> : congteng</li>
+		        </ul>
+		        </div>
+		    </div>
+			
+
+		</div>
+
+	</div>
+	<footer>
+		<span class='foos'>
+	       <a href='javascript:pivot_previous();' class='left-pivot'><img src="img/back.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	       <a href='javascript:pivot_next();' class='right-pivot'><img src="img/next.png"></a>
+	   	</span>
+
+	   	<span class='more'>
+	   		<a id='detail'><img id='cursor' src="img/overflowdots.png"></a>
+	   	</span>
+	   	<br>
+	   	<span class='instruction'>
+	   		pre &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next
+	   	</span>
+	   	<div class='language'>
+			<a style='color: black' href="index.html">中文</a>
+	   	</div>
+   	</footer>
+
+  </body>
+</html>
