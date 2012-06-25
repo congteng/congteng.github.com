@@ -26,25 +26,48 @@
 			    });
 
 			    $("div.metro-pivot").metroPivot();
+
+
+			    $("#detail").toggle(function(){
+			    	$("#cursor").attr("src", "img/parent.png");
+			    	$("footer").animate({
+        				height: "190"
+        			});
+			    }, function(){
+			    	$("#cursor").attr("src", "img/overflowdots.png");
+			    	$("footer").animate({
+        				height: "50"
+        			});
+			    });
+
+			   $(".page").click(function(){
+			   		$("#cursor").attr("src", "img/overflowdots.png");
+			    	$("footer").animate({
+        				height: "50"
+        			});
+			   });
 		});
 
 		function pivot_previous() { $("div.metro-pivot").data("controller").goToPrevious(); }
         function pivot_next() { $("div.metro-pivot").data("controller").goToNext(); }
+
 	</script>
 
     <style>
 
 		footer{
 			position: fixed;			
-
+			height: 50px;
 			padding-top:5px;
 			position:fixed; 
-			bottom:20px; 
-			left: 180px;
+			bottom:0px; 
+		
 			width:100%; 
-			width: 1000px;
+			background-color: grey;
+			text-align: center;
 		}
 
+	
 
 		body { font-family: Segoe UI; font-size: 12pt; background: #000; color: White; margin:0; overflow-y:scroll;}
 		div.page {max-width:1000px; margin:auto; overflow:hidden; margin-bottom:100px;}
@@ -60,7 +83,6 @@
 		}
 
 		.self{
-
 			margin-left: 220px;
 			padding: 5px;
 		}
@@ -70,7 +92,6 @@
 		}
 		.info{
 			margin-left: 220px;
-			
 		}
 
 		.pivot-item{
@@ -83,6 +104,25 @@
 		.self-main{
 			margin-top: 100px;
 		}
+
+		.more{
+			margin-left: 500px;
+			position: fixed;
+		}
+
+		.instruction{
+			color: black;
+			font-size: 10px;
+		}
+
+		.language{
+			color: black;
+			font-size: 20px;
+			margin-left:30px;
+			text-align:left;
+			padding: 5px;
+		}
+
 
     </style>
 
@@ -242,7 +282,82 @@
 						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
 						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
 					</ul>
-				</div>
+					</div><div class='english-self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
+					</div><div class='english-self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
+					</div><div class='english-self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
+					</div><div class='english-self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
+					</div><div class='english-self'>
+					<ul>
+						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
+						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
+						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
+						<li>I used Sinatra, Rails for not a very long time, but I have abilities to learn and work with, I'm correspond with most of the requirements of most of the employments</li>
+						<li>I have github id(github.com/congteng), bitbucket id(congteng)</li>
+						<li>I am familiar with UI design, such as html5(familiar), css3(not very good), js(familiar)</li>
+						<li>I like new things, I have ever tried Nodejs</li>
+						<li>I like the world of open source, I use ubuntu for a long time, recently I moved to Mac OS X</li>
+						<li>I like Apple, and I studied development of IOS for a couple of days</li>
+						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
+						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+					</ul>
+					</div>
 		    </div>
 
 		    <div class='pivot-item'>
@@ -264,10 +379,21 @@
 
 	</div>
 	<footer>
-		<span style='font-size:30pt;'>
-	       <a href='javascript:pivot_previous();' class='left-pivot'>&lsaquo;&lsaquo;</a>
-	       <a href='javascript:pivot_next();' class='right-pivot'>&rsaquo;&rsaquo;</a>
+		<span class='foos'>
+	       <a href='javascript:pivot_previous();' class='left-pivot'><img src="img/back.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	       <a href='javascript:pivot_next();' class='right-pivot'><img src="img/next.png"></a>
 	   	</span>
+
+	   	<span class='more'>
+	   		<a id='detail'><img id='cursor' src="img/overflowdots.png"></a>
+	   	</span>
+	   	<br>
+	   	<span class='instruction'>
+	   		上一页 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下一页
+	   	</span>
+	   	<div class='language'>
+			<a href="" style='color: black'>English</a><br><br><a style='color: black' href="">中文</a>
+	   	</div>
    	</footer>
 
   </body>
