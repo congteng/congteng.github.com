@@ -59,18 +59,18 @@
     <style>
 
 		footer{
-			position: fixed;			
+			position: fixed;
 			height: 50px;
 			padding-top:5px;
-			position:fixed; 
-			bottom:0px; 
-		
-			width:100%; 
+			position:fixed;
+			bottom:0px;
+
+			width:100%;
 			background-color: grey;
 			text-align: center;
 		}
 
-	
+
 
 		body { font-family: Segoe UI; font-size: 12pt; background: #000; color: White; margin:0; overflow-y:scroll;}
 		div.page {max-width:1000px; margin:auto; overflow:hidden; margin-bottom:100px;}
@@ -82,7 +82,7 @@
 
 
 		.greeting{
-			margin-left: 220px;	
+			margin-left: 220px;
 		}
 
 		.self{
@@ -148,8 +148,8 @@
   	<div class='page'>
 		<div class='metro-pivot'>
 		    <div class='pivot-item'>
-		    	
-		        <h3>Self Instruction</h3> 
+
+		        <h3>Self Instruction</h3>
 				<div class='self-main'>
 		        <div id="tiles" class="blue">
 			        <!-- Mango Flip List that triggers every 3 seconds -->
@@ -181,7 +181,7 @@
 
 				<div class='self'>
 					<ul>
-						<li>I am Congteng, 22 years old, going to be a senior student, I want to start to work in this summer</li>
+						<li>I am Congteng, 22 years old, a senior student</li>
 						<li>I learned Java by myself as my first computer language, then I leaded teams and made a few projects, we also took part in some competitions </li>
 						<li>I used to be crazy about the JavaWeb mechanism, so I tried to read source code of spring struts(1,2), and I have my acknowledge about them</li>
 						<li>I got to know Ruby from a programmer friend of mine, and I fall in love with her very fast, especially the powerful metaprogramming leave a great expression on me</li>
@@ -193,22 +193,23 @@
 						<li>I like Apple, and I studied development of IOS for a couple of days</li>
 						<li>I like English, western culture, all kinds of music especially R&B(Brian Mcknight, Babyface, Boyz ii men, Jay Sean ...)</li>
 						<li>I am active in the Ruby-China community(ID:congteng), refresh everyday</li>
+						<li>Now I'm working at Yottaa as an intern</li>
 					</ul>
 				</div>
 			</div>
-			
+
 		    </div>
 
 	        <div class='pivot-item'>
-		        <h3>College Life</h3> 
+		        <h3>College Life</h3>
 		        <ul>
 					<h4>About Study</h4>
 					<li>
 						I learned Java by myself when I went to College, my attention was on the basic things like APIs in my first semester, I also kept a good code style
 						In my second semester, I started to learn the Web technology, from oracle/mysql database to JSP
 						In the summer vacation, the main thing is about some powerful and classical frameworks such as Spring Struts Hibernate ...
-					</li>	
-					<br>        	
+					</li>
+					<br>
 					<li>
 						In my Sophomore semester, I paid more attention on the basic stuff like data structure, 23 design patterns and so on.
 						The next semester, I leaded a team and worked on some projects, such as chatting online system, recommender of movies ...
@@ -230,18 +231,18 @@
 					<li>
 						I have a lot of hobbies, especially listening to music, watching movies. I also can play the piano, the guitar and some other instruments.I like singing, and in my school time I took part in lots of competitions and parties
 					</li>
-					
+
 		        </ul>
-		    </div>	     
+		    </div>
 
 	        <div class='pivot-item'>
-		        <h3>Skills & Experience</h3>		    
+		        <h3>Skills & Experience</h3>
 
 		        <div>
 		        <font style='color: orange'>Computer Languages</font>
 		        <ul>
 		        	<li>C : seldom use, I just read books</li>
-					<li>Java : skilled, I have use Java for more than 2 years(from JavaSE to JaveEE)</li>		    	
+					<li>Java : skilled, I have use Java for more than 2 years(from JavaSE to JaveEE)</li>
 					<li>Ruby : skilled, Ruby is so elegant, I use a lot of time to learn the metaprogramming, but I'm not so familiar with the API as Java</li>
 					<li>Objective-c : familiar, I can use it to make basic Apps</li>
 					<li>Javascript : skilled, I use it for a long time, I also learned its features, all kinds of famous framework like jquery, NodeJS ...</li>
@@ -274,19 +275,19 @@
 		        <div>
 		        <font style='color: orange'>Others</font>
 		        <ul>
-		        	<li>Data Structure & Arithmetic : 
+		        	<li>Data Structure & Arithmetic :
 		        		when I learned Java, I read some most useful source code of JDK Collection package such as ArrayList LinkedList ... I've also done writting some simple sorting searching arithmetic </li>
 		        	<li>Design Parttern : I'm familiar with this, I read a book "Java Design Parttern", I have the habit to refactor my code</li>
 		        </ul>
 		        </div>
 		    </div>
 
-	
+
 <div class='pivot-item'>
-		        <h3>Real Code</h3> 
+		        <h3>Real Code</h3>
 		        	<div class='code-area'>
 		        	This snippet of code comes from a recent project,<br/>
-		        	demo(<a href="http://tuoda-coach.herokuapp.com/home/plan">http://tuoda-coach.herokuapp.com/home/plan</a>),<br/> 
+		        	demo(<a href="http://tuoda-coach.herokuapp.com/home/plan">http://tuoda-coach.herokuapp.com/home/plan</a>),<br/>
 		        	source code(<a href="https://github.com/congteng/qasocial">https://github.com/congteng/qasocial</a>)
 		        	，<br>I use a recursion to implement a tree on web page, so this can be use to comment or similar things, after refactoring this, it can be DRY.<br>
 		        	the disadvantage is the function 'content_tag' should be better for generating htmls
@@ -308,7 +309,7 @@ def recurse boards, html, with_button, with_bars
 						html &lt;&lt; "&lt;li>&lt;span id='label-#{foo.id}' class='label label-#{foo_color foo}'>\
 
 						&lt;a href='/functionalities/#{foo.id}?user_id=#{foo.user.id}'>#{foo.say}&lt;/a>&lt;/span>"
-						
+
 						html &lt;&lt; "&lt;button class='delf' data-id='#{foo.id}' data-userid='#{foo.user.id}'>删除&lt;/button>&lt;/li>" if with_button
 
 						html &lt;&lt; "&lt;div class='foo'>
@@ -321,12 +322,12 @@ def recurse boards, html, with_button, with_bars
 							&lt;a data-val='40' data-id='#{foo.id}' data-userid='#{foo.user.id}'>40%&lt;/a> |\
 							&lt;a data-val='60' data-id='#{foo.id}' data-userid='#{foo.user.id}'>60%&lt;/a> | \
 							&lt;a data-val='80' data-id='#{foo.id}' data-userid='#{foo.user.id}'>80%&lt;/a> | \
-							&lt;a data-val='100' data-id='#{foo.id}' data-userid='#{foo.user.id}'>100%&lt;/a>\ 
+							&lt;a data-val='100' data-id='#{foo.id}' data-userid='#{foo.user.id}'>100%&lt;/a>\
 						&lt;/span>\
 					&lt;/div>" if with_bars
 					end
 				html &lt;&lt; "&lt;/ul>"
-			end			
+			end
 			html &lt;&lt;	"&lt;/li>"
 			unless board.boards.empty?
 				recurse(board.boards, html, with_button, with_bars)
@@ -359,19 +360,19 @@ end
 		    </div>
 
 		    <div class='pivot-item'>
-	        	 <h3>Contact</h3> 
+	        	 <h3>Contact</h3>
 	        	<div class='contact'>
-		       
+
 		        <ul>
-		        	<li><font style='color: orange'>mobile</font> : 15244099487  |  15698232386</li>
-		        	<li><font style='color: orange'>Gmail</font> : congteng45@gmail.com</li>
+		        	<li><font style='color: orange'>mobile</font> : 15311303916</li>
+		        	<li><font style='color: orange'>Gmail</font> : congteng45@gmail.com | teng.cong@yottaa.com</li>
 		        	<li><font style='color: orange'>Twitter</font> : congteng</li>
 		        	<li><font style='color: orange'>QQ</font> : 148095943</li>
-		        	<li><font style='color: orange'>Github</font> : congteng</li>
+		        	<li><font style='color: orange'>Github</font> : congteng | teng.cong</li>
 		        </ul>
 		        </div>
 		    </div>
-			
+
 
 		</div>
 
